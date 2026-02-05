@@ -36,15 +36,29 @@ body,
   flex: 0 0 33.333333%;
 }
 
-.container {
-  margin: auto;
-  width: 80%;
-  height: calc(100% - 100px);
-  padding: 5px;
-  text-align: center;
-  top: 50%;
-  border-radius: 5px;
+@media (max-width: 640px) {
+  .selection-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .selection-item {
+    list-style: none;
+    flex: 0 0 33.333333%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
+  .selection-item .idp-button {
+    width: min(320px, 98vw);
+    height: 90px;
+  }
+}
+
+.ta-center {
+  text-align: center;
+}
+.container {
   h1 {
     font-size: 36px;
     padding: 10px;
@@ -61,14 +75,6 @@ body,
       border-radius: 5px;
     }
   }
-}
-
-.vertical-center {
-  position: relative;
-  /* left: 40%; */
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 .step {
@@ -180,4 +186,34 @@ body,
   border-radius: 5px;
   padding: var(--pf-global--spacer--md);
   margin-bottom: var(--pf-global--spacer--sm);
+}
+
+.customExpansion {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: var(--pf-global--spacer--sm);
+  margin-top: var(--pf-global--spacer--sm);
+  margin-bottom: var(--pf-global--spacer--xl);
+}
+
+.infoBox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--pf-global--spacer--sm);
+  padding-left: var(--pf-global--spacer--md);
+}
+.infoText {
+  color: var(--pf-global--palette--black-700);
+  font-size: var(--pf-global--FontSize--sm);
+}
+.infoBoxWarning {
+  color: var(--pf-global--palette--gold-400);
+}
+.icon-success {
+  color: var(--pf-global--palette--green-400);
+}
+
+.existingIdpsTable.pf-c-table tbody > tr > * {
+  vertical-align: middle;
 }
